@@ -1,5 +1,5 @@
 # keycloak-sha1-salted
-Add salted SHA1 hashing support to Keycloak. ie. you're migrating to Keycloak and need to import legacy passwords stored as SHA-1 salted hashes.
+Add salted SHA1 hashing support to Keycloak. ie. you're migrating to Keycloak and need to import legacy passwords stored as SHA-1 salted hashes. This password hash matches Kong API Gateway's basic auth hashing algorithm.
 
 ## Requirements
 - Java 11
