@@ -1,5 +1,7 @@
 target
+.idea
 .DS_Store
 .classpath
 .project
 .settings
+upload.sh

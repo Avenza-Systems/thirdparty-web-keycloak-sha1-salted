@@ -1,13 +1,16 @@
 package com.msalmi;
 
-import java.math.BigInteger;
-import java.security.MessageDigest;
-
+import org.jboss.logging.Logger;
 import org.keycloak.credential.hash.PasswordHashProvider;
 import org.keycloak.models.PasswordPolicy;
 import org.keycloak.models.credential.PasswordCredentialModel;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+
 public class SHA1HashProvider implements PasswordHashProvider {
+
+	private static final Logger logger = Logger.getLogger(SHA1HashProvider.class);
 
 	private final String providerId;
 	public static final String ALGORITHM = "SHA-1";
@@ -33,8 +36,10 @@ public class SHA1HashProvider implements PasswordHashProvider {
 
 	@Override
 	public boolean verify(String rawPassword, PasswordCredentialModel credential) {
+		logger.infof("Enter verify %s method", ALGORITHM);
 		String salt = new String(credential.getPasswordSecretData().getSalt(), java.nio.charset.StandardCharsets.UTF_8);
-		String encodedPassword = this.encode(salt + rawPassword, credential.getPasswordCredentialData().getHashIterations());
+		logger.infof("salt: %s", salt);
+		String encodedPassword = this.encode(rawPassword + salt, credential.getPasswordCredentialData().getHashIterations());
 		String hash = credential.getPasswordSecretData().getValue();
 		return encodedPassword.equals(hash);
 	}
