@@ -1,4 +1,4 @@
-package com.msalmi;
+package com.github.nextpertise.keycloak.sha1hashprovider;
 
 import org.keycloak.Config.Scope;
 import org.keycloak.credential.hash.PasswordHashProvider;

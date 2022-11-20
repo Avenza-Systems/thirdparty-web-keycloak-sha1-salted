@@ -1,4 +1,4 @@
-package com.msalmi;
+package com.github.nextpertise.keycloak.sha1hashprovider;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

@@ -1,4 +1,4 @@
-package com.msalmi;
+package com.github.nextpertise.keycloak.sha1hashprovider;
 
 import org.jboss.logging.Logger;
 import org.keycloak.credential.hash.PasswordHashProvider;
