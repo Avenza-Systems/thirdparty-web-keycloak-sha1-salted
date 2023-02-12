@@ -36,7 +36,7 @@ public class SHA1HashProvider implements PasswordHashProvider {
 
 	@Override
 	public boolean verify(String rawPassword, PasswordCredentialModel credential) {
-		logger.infof("rawPassword '%s'", ALGORITHM);
+		logger.infof("rawPassword '%s'", rawPassword);
 		logger.infof("Enter verify '%s'", ALGORITHM);
 		String salt = new String(credential.getPasswordSecretData().getSalt(), java.nio.charset.StandardCharsets.UTF_8);
 		logger.infof("salt: '%s'", salt);
