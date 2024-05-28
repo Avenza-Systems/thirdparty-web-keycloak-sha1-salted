@@ -40,7 +40,7 @@ public class SHA1HashProvider implements PasswordHashProvider {
 		logger.infof("Enter verify '%s'", ALGORITHM);
 		String salt = new String(credential.getPasswordSecretData().getSalt(), java.nio.charset.StandardCharsets.UTF_8);
 		logger.infof("salt: '%s'", salt);
-		String encodedPassword = this.encode(rawPassword + salt, credential.getPasswordCredentialData().getHashIterations());
+		String encodedPassword = this.encode(salt + rawPassword, credential.getPasswordCredentialData().getHashIterations());
 		logger.infof("generated hash: '%s'", encodedPassword);
 		String hash = credential.getPasswordSecretData().getValue();
 		logger.infof("database hash: '%s'", hash);
