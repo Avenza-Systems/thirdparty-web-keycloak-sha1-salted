@@ -9,13 +9,13 @@ Forked from: https://github.com/nicolabeghin/keycloak-sha1-salted
 
 ## Building
 
-- Run `mvn package`
-- JAR archive is generated in `./target/keycloak-sha1.jar`
+- Run `DOCKER_BUILDKIT=1 docker build --output out .`
+- JAR archive is generated in `./out/keycloak-sha1.jar`
 
 ## Deploying to Keycloak
 
-1. Move the built JAR file to Keycloak's directory `standalone/deployments/` (on Keycloak under Docker: `/opt/jboss/keycloak/standalone/deployments`)
-2. Watch the `standalone/deployments/` for the file `keycloak-sha1.jar.deployed`
+1. Move the built JAR file to Keycloak's directory `providers/` (on Keycloak under Docker: `/opt/jboss/keycloak/providers`)
+2. Watch the `providers/` for the file `keycloak-sha1.jar.deployed`
 
 :warning: If you find instead the file `keycloak-sha1.jar.failed`, you can run the command `cat keycloak-sha1.jar.failed` to find out what went wrong with your deployment.
 
