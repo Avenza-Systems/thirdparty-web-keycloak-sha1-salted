@@ -7,4 +7,4 @@ COPY . .
 RUN mvn package
 
 FROM scratch AS export-stage
-COPY --from=maven /app/target/keycloak-sha1.jar .
+COPY --from=maven /app/target/avenza-keycloak-sha1.jar .
