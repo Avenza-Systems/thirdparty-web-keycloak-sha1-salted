@@ -3,14 +3,10 @@ Add salted SHA1 hashing support to Keycloak. ie. you're migrating to Keycloak an
 
 Forked from: https://github.com/nicolabeghin/keycloak-sha1-salted
 
-## Requirements
-- Java 11
-- Maven 3.6
-
 ## Building
 
-- Run `DOCKER_BUILDKIT=1 docker build --output out .`
-- JAR archive is generated in `./out/avenza-keycloak-sha1.jar`
+- Run `docker build --no-cache --platform=linux/amd64 --output out --build-arg VERSION=version_value .`
+- JAR archive is generated in `./out/app/avenza-keycloak-sha1-{version}.jar`
 
 ## Deploying to Keycloak
 
